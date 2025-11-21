@@ -10,9 +10,9 @@ No tooling required—just a browser:
 2. Open `index.html` in your preferred browser (double-click or drag it into a window).
 3. Add todos; refresh the page to confirm your entries persist.
 
-## Run with Docker
+## Run with Docker_
 
-The repo ships with an `nginx`-based image for static hosting.
+The repo ships with an `nginx`-based image for static hosting
 
 ```bash
 # from the project root
