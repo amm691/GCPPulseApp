@@ -37,4 +37,12 @@ jobs:
           key: ${{ secrets.KEY }}
           port: 22
           script: |
-            sudo docker build . -t pulseapp
+            set -eo pipefail
+            cd /home/amitmankar69
+            sudo docker stop pulseapp-container || true
+            sudo docker rm pulseapp-container || true
+            sudo docker image prune -f
+            sudo docker build -t pulseapp:latest .
+            sudo docker run -d --restart unless-stopped --name pulseapp-container -p 80:80 pulseapp:latest
+            sudo docker image prune -f
+            sudo docker ps -a
