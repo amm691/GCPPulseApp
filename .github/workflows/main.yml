@@ -13,14 +13,7 @@ jobs:
     - name: Checkout code from github repo
       uses: actions/checkout@v4
 
-    - name: Run some commands
-      run: |
-        whoami
-        ls -al
-        pwd
-        cat index.html
-
-    - name: Copy code to EC2 server
+    - name: Copy code to VM server
       uses: appleboy/scp-action@v0.1.7
       with:
           host: ${{ secrets.HOST }}
